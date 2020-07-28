@@ -3,6 +3,10 @@ language: python
 python:
   - 3.8
 
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VETUALENVS=1
 install:
  - pip install -q pipenv codecov
  - pipenv sync --dev
