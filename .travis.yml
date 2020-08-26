@@ -23,7 +23,7 @@ install:
 before_ecript:
   - psql -c "CREATE DATEBASE testedb;" -U postgres
 
- script:
+script:
   - pipenv run flake8
   - pipenv run pytest --cov=pypro
 
