@@ -10,7 +10,7 @@ services:
 addons:
   postgresql: '9,5'
 
-end:
+env:
   global:
     - PIPENV_VENV_IN_PROJECT=1
     - PIPENV_IGNORE_VIRTUALENVS=1
@@ -24,7 +24,7 @@ before_ecript:
   - psql -c "CREATE DATEBASE testedb;" -U postgres
 
 script:
-  - pipenv run flake8
+  - pipenv run flake8 .
   - pipenv run pytest --cov=pypro
 
 after_success:
